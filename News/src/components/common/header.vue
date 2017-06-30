@@ -9,12 +9,12 @@
         </div>
       </div>
      <ul class='nav'>
-      <li><router-link to="">全部</router-link></li>
-      <li><router-link to="">精华</router-link></li>
-      <li><router-link to="">week</router-link></li>
-      <li><router-link to="">分享</router-link></li>
-      <li><router-link to="">问答</router-link></li>
-      <li><router-link to="">招聘</router-link></li>
+      <li><router-link to="/news/all">全部</router-link></li>
+      <li><router-link to="/news/good">精华</router-link></li>
+      <li><router-link to="/news/weex">week</router-link></li>
+      <li><router-link to="/news/share">分享</router-link></li>
+      <li><router-link to="/news/ask">问答</router-link></li>
+      <li><router-link to="/news/job">招聘</router-link></li>
     </ul>
   </div>
 </template>
@@ -83,6 +83,9 @@ export default {
     display: -webkit-flex;
   }
   .nav a{
+    color: #ccc;
+  }
+  .nav a.router-link-active{
     color: #fff;
   }
   .nav li{
