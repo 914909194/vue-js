@@ -66,7 +66,7 @@ export default {
       loadData(){
         Axios.get(this.address).then((res)=>{
           this.msgList=this.msgList.concat(res.data.data);
-          console.log(this.msgList);  
+          // console.log(this.msgList);  
           this.page++;
           this.show = false;
           //计算时间 判断多久之前发帖
@@ -172,6 +172,9 @@ export default {
     width: 100%;
     padding-top:0.2rem;
     overflow: hidden;
+  }
+  .msg-item span{
+    color: #f1c;
   }
   .msg-item span:nth-child(1){
     float: left;

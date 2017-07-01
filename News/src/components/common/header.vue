@@ -1,26 +1,27 @@
 <template>
   <div class="header">
-      <div class="log">
+    <div class="log">
         <div class="left">
           <img src="./left.png" alt="">
         </div>
         <div class="right">
           <img src="./right.png" alt="">
         </div>
-      </div>
-     <ul class='nav'>
-      <li><router-link to="/news/all">全部</router-link></li>
-      <li><router-link to="/news/good">精华</router-link></li>
-      <li><router-link to="/news/weex">week</router-link></li>
-      <li><router-link to="/news/share">分享</router-link></li>
-      <li><router-link to="/news/ask">问答</router-link></li>
-      <li><router-link to="/news/job">招聘</router-link></li>
-    </ul>
+    </div>
+    <ul class='nav'>
+      <li @click='run(0)'><router-link to="/news/all">全部</router-link></li>
+      <li @click='run(1)'><router-link to="/news/good">精华</router-link></li>
+      <li @click='run(2)'><router-link to="/news/weex">weex</router-link></li>
+      <li @click='run(3)'><router-link to="/news/share">分享</router-link></li>
+      <li @click='run(4)'><router-link to="/news/ask">问答</router-link></li>
+      <li @click='run(5)'><router-link to="/news/job">招聘</router-link></li>
+   </ul>
+   <div class="nav-scroll"></div>
   </div>
 </template>
 
 <script>
-
+import $ from 'jquery'
 export default {
   data() {
     return {
@@ -29,7 +30,9 @@ export default {
     }
   },
   methods:{
-     
+     run:function(idx){
+      $('.nav-scroll').css({'left':$('.nav-scroll').width()*idx});
+     }
   }
 }
 
@@ -40,12 +43,18 @@ export default {
 
   @import "../../assets/css/reset.css";
   .header{
-     background-color: #474a4f;
-    z-index: 20;
-   
-    width: 100%;
+   background-color: #474a4f; 
+   width: 100%;
     position:fixed;
     top: 0;
+  }
+  .nav-scroll{
+    width: 16.7%;
+    height: 3px;
+    background: #f00;
+    position: absolute;
+    bottom: 0;
+    -webkit-transition:all 0.5s ease 0s ;
   }
   .log{
     width: 100%;

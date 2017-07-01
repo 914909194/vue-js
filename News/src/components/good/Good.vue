@@ -18,7 +18,8 @@ export default {
     NewsContent
   },
 
-  mounted(){  
+  mounted:function(){  
+    // this.$emit('run','1');
   }
 }
 

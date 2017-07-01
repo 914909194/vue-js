@@ -8,6 +8,9 @@ import Weex from '@/components/weex/Weex'
 import Job from '@/components/job/Job'
 import Ask from '@/components/ask/Ask'
 import Share from '@/components/share/Share'
+import Msg from '@/components/msg/Msg'
+import About from '@/components/about/About'
+import More from '@/components/more/More'
 Vue.use(Router)
 
 export default new Router({
@@ -32,10 +35,20 @@ export default new Router({
     {
       path: '/',
       redirect:'/news/all'
+    },
+    {
+      path: '/msg',
+      component: Msg,
+    },
+    {
+      path: '/about',
+      component: About,
+    },
+    {
+      path: '/more',
+      component: More,
     }
-    // {
-    //   path: '/news',
-    //   component: NewsNav
-    // }
+    
+   
   ]
 })
